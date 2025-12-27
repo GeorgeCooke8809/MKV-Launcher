@@ -49,8 +49,8 @@ def import_settings():
 if __name__ == "__main__":
     file_paths = import_settings()
 
-    launch_window(file_paths["Make MKV"], (2880,0), "APP", "MakeMKV")
-    launch_window(file_paths["Jellyfin Dashboard"], (1915,0), "URL", "Chrome")
+    launch_window(file_path = file_paths["Make MKV"], location = (2880,0), file_type = "APP", app_name = "MakeMKV")
+    launch_window(file_path = file_paths["Jellyfin Dashboard"], location = (1915,0), file_type = "URL", app_name = "Chrome")
 
-    launch_window(file_paths["Jellyfin SMB"], (-10,0), "FOLDER")
-    launch_window(file_paths["Jellyfin Temp"], (950,0), "FOLDER")
+    launch_window(file_path = file_paths["Jellyfin SMB"], location = (-10,0), file_type = "FOLDER")
+    launch_window(file_path = file_paths["Jellyfin Temp"], location = (950,0), file_type = "FOLDER")
