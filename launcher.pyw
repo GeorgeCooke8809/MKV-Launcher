@@ -42,6 +42,9 @@ def launch_file_explorer(file_path: str, location: tuple[int, int]):
 
     active = get_relevant_window("File Explorer")
 
+    if active.isMaximized or active.isMinimized:
+        active.restore()
+
     active.resizeTo(980,1035)
     active.moveTo(x,y)
 
