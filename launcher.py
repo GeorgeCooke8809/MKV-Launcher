@@ -3,7 +3,6 @@ import time
 import subprocess
 import pygetwindow
 import keyboard
-import mouse
 
 def launch_window(file_path: str, location: tuple, file_type: str):
     x = location[0]
