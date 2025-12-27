@@ -15,7 +15,7 @@ def get_relevant_window(app_name: str):
 
     return window[0]
 
-def launch_window(file_path: str, location: tuple[int, int], file_type: str, app_name: str = None):
+def launch_window(file_path: str, location: tuple[int, int], file_type: str, app_name: str):
     x, y = location
 
     if file_type == "APP":
@@ -24,9 +24,6 @@ def launch_window(file_path: str, location: tuple[int, int], file_type: str, app
         subprocess.Popen(["C:\Program Files\Google\Chrome\Application\chrome.exe", "--new-window", f"{file_path}"])
     elif file_type == "FOLDER":
         subprocess.Popen(["explorer", file_path])
-        app_name = "File Explorer"
-
-    time.sleep(1)
 
     active = get_relevant_window(app_name)
     
@@ -52,5 +49,5 @@ if __name__ == "__main__":
     launch_window(file_path = file_paths["Make MKV"], location = (2880,0), file_type = "APP", app_name = "MakeMKV")
     launch_window(file_path = file_paths["Jellyfin Dashboard"], location = (1915,0), file_type = "URL", app_name = "Chrome")
 
-    launch_window(file_path = file_paths["Jellyfin SMB"], location = (-10,0), file_type = "FOLDER")
-    launch_window(file_path = file_paths["Jellyfin Temp"], location = (950,0), file_type = "FOLDER")
+    launch_window(file_path = file_paths["Jellyfin SMB"], location = (-10,0), file_type = "FOLDER", app_name = "JellyfinSMB")
+    launch_window(file_path = file_paths["Jellyfin Temp"], location = (950,0), file_type = "FOLDER", app_name = "Jellyfin Temp")
