@@ -2,6 +2,7 @@ import time
 import subprocess
 import pygetwindow
 import json
+from pathlib import Path
 
 def launch_window(file_path: str, location: tuple[int, int], file_type: str):
     x, y = location
@@ -33,7 +34,9 @@ def launch_file_explorer(file_path: str, location: tuple[int, int]):
     active.moveTo(x,y)
 
 def import_settings():
-    return json.load(open("filePaths.json", "r"))
+    base_directory = Path(__file__).resolve().parent
+    
+    return json.load(open(f"{base_directory}/filePaths.json", "r"))
 
 
 if __name__ == "__main__":
